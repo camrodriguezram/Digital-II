@@ -1,0 +1,7 @@
+INFILE=/home/sebastian/DIGITAL/Proyecto/build/system-routed.ncd
+OUTFILE=/home/sebastian/DIGITAL/Proyecto/build/system.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/sebastian/DIGITAL/Proyecto/build
+LICENSE=WebPack
+USER_INFO=210869606_0_0_818

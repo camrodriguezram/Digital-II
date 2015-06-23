@@ -1,0 +1,8 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -uc
+../system.ucf system.ngc
+
+Reading NGO file
+"/home/user/Desktop/SemestreVII/DEII/GuideBot-1.0/lm32_soc/build/system.ngc" ...

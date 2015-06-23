@@ -1,0 +1,10 @@
+module div (
+input clk,
+output reg clkn
+);
+
+always @ (posedge clk)
+begin
+clkn=~clk;
+end
+

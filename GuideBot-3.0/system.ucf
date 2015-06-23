@@ -1,0 +1,53 @@
+
+# ==== Clock inputs (CLK) ====
+
+NET "clk"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";
+NET "clk" TNM_NET = clk;
+TIMESPEC "TS_clk" = PERIOD "clk" 10000 ps INPUT_JITTER 100 ps; 
+
+NET "rst"	LOC = "E16"	| IOSTANDARD = "LVCMOS33";
+NET "led"	LOC = "T8"	| IOSTANDARD = "LVCMOS33";
+
+
+# ==== UART XBEE====
+NET "uart_rxd"				LOC = "G14"	| IOSTANDARD = "LVCMOS33"; #Arriba
+NET "uart_txd"				LOC = "K16"	| IOSTANDARD = "LVCMOS33"; #Abajo
+# ==== UART MICROUSB====
+#NET "uart_rxd"				LOC = "C4"	| IOSTANDARD = "LVCMOS33"; #Arriba
+#NET "uart_txd"				LOC = "D4"	| IOSTANDARD = "LVCMOS33"; #Abajo
+		
+
+# ==== I2C ====
+#NET "i2c_sda"	LOC = "V9"	| IOSTANDARD = "LVCMOS33";		
+#NET "i2c_clk"	LOC = "R8"	| IOSTANDARD = "LVCMOS33";
+
+
+# ===== GPIO LEDS=====
+
+NET "gpio_led<0>" LOC = "V4" 	| IOSTANDARD = "LVCMOS33"; ##Pin 1
+NET "gpio_led<1>" LOC = "U3" 	| IOSTANDARD = "LVCMOS33"; ##Pin 2
+NET "gpio_led<2>" LOC = "V1" 	| IOSTANDARD = "LVCMOS33"; ##Pin 3
+NET "gpio_led<3>" LOC = "R1" 	| IOSTANDARD = "LVCMOS33"; ##Pin 4
+NET "gpio_led<4>" LOC = "P5" 	| IOSTANDARD = "LVCMOS33"; ##Pin 7
+NET "gpio_led<5>" LOC = "U1" 	| IOSTANDARD = "LVCMOS33"; ##Pin 8
+NET "gpio_led<6>" LOC = "R2" 	| IOSTANDARD = "LVCMOS33"; ##Pin 9
+NET "gpio_led<7>" LOC = "P2" 	| IOSTANDARD = "LVCMOS33"; ##Pin 10
+
+# ===== GPIO PMOD JC=====
+NET "gpio_io<0>" LOC = "K2" 	| IOSTANDARD = "LVCMOS33"; ##Pin 1
+NET "gpio_io<1>" LOC = "E7" 	| IOSTANDARD = "LVCMOS33"; ##Pin 2
+NET "gpio_io<2>" LOC = "J3" 	| IOSTANDARD = "LVCMOS33"; ##Pin 3
+NET "gpio_io<3>" LOC = "J4" 	| IOSTANDARD = "LVCMOS33"; ##Pin 4
+NET "gpio_io<4>" LOC = "K1" 	| IOSTANDARD = "LVCMOS33"; ##Pin 7
+NET "gpio_io<5>" LOC = "E6" 	| IOSTANDARD = "LVCMOS33"; ##Pin 8
+NET "gpio_io<6>" LOC = "J2" 	| IOSTANDARD = "LVCMOS33"; ##Pin 9
+NET "gpio_io<7>" LOC = "G6" 	| IOSTANDARD = "LVCMOS33"; ##Pin 10	
+
+# ====== SPI BROUGHT FROM NICOLAS' PROJECT =======
+
+#NET "spi_miso_aux" LOC = "H4"	| IOSTANDARD = "LVCMOS33";		
+NET "spi_mosi_aux" LOC = "H1"	| IOSTANDARD = "LVCMOS33";		
+NET "spi_clk_aux" LOC = "G1"	| IOSTANDARD = "LVCMOS33";		
+NET "spi_ss_aux" LOC = "G3"	| IOSTANDARD = "LVCMOS33";		
+#NET "spi_misoled" LOC = "V9"  | IOSTANDARD = "LVCMOS33";
+NET "spi_mosiled" LOC = "R8"  | IOSTANDARD = "LVCMOS33";

@@ -1,0 +1,1711 @@
+Release 14.2 - xst P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "system.prj"
+Input Format                       : MIXED
+
+---- Target Parameters
+Output File Name                   : "system.ngc"
+Target Device                      : XC6SLX16-CSG324-3
+
+---- Source Options
+Top Module Name                    : system
+Automatic Register Balancing       : yes
+
+---- General Options
+Optimization Goal                  : AREA
+Optimization Effort                : 2
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/system.v" into library work
+Parsing module <system>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" into library work
+Parsing module <lac>.
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 23. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 24. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 25. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 86. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 87. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 88. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 89. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 90. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 91. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/lac.v" Line 92. parameter declaration becomes local in lac with formal parameter declaration list
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v" into library work
+Parsing module <uart>.
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v" Line 24. parameter declaration becomes local in uart with formal parameter declaration list
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lac/dp_ram.v" into library work
+Parsing module <dp_ram>.
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/dp_ram.v" Line 20. parameter declaration becomes local in dp_ram with formal parameter declaration list
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_cpu.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/system_conf.v" included at line 28.
+Parsing module <lm32_cpu>.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_functions.v" included at line 670.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_instruction_unit.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_instruction_unit>.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_functions.v" included at line 291.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_decoder.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_decoder>.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_functions.v" included at line 298.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_simtrace.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 10.
+Parsing module <lm32_simtrace>.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_functions.v" included at line 63.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_load_store_unit.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_load_store_unit>.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_functions.v" included at line 208.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_adder.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_adder>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_addsub.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 23.
+Parsing module <lm32_addsub>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_logic_op.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_logic_op>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_shifter.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_shifter>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_multiplier.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_multiplier>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_mc_arithmetic.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_mc_arithmetic>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_interrupt.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/system_conf.v" included at line 24.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 25.
+Parsing module <lm32_interrupt>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_icache.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Parsing module <lm32_icache>.
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_functions.v" included at line 162.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_dcache.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 24.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_ram.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_include.v" included at line 23.
+Parsing module <lm32_ram>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_bram/wb_bram.v" into library work
+Parsing module <wb_bram>.
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/wb_bram/wb_bram.v" Line 25. parameter declaration becomes local in wb_bram with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/wb_bram/wb_bram.v" Line 26. parameter declaration becomes local in wb_bram with formal parameter declaration list
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_uart/wb_uart.v" into library work
+Parsing module <wb_uart>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_timer/wb_timer.v" into library work
+Parsing module <wb_timer>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_gpio/wb_gpio.v" into library work
+Parsing module <wb_gpio>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_conbus/wb_conbus_top.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_conbus/wb_conbus_defines.v" included at line 48.
+Parsing module <wb_conbus_top>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_conbus/wb_conbus_arb.v" into library work
+Parsing verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_conbus/wb_conbus_defines.v" included at line 48.
+Parsing module <wb_conbus_arb>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_sram/wb_sram32.v" into library work
+Parsing module <wb_sram32>.
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/wb_sram/wb_sram32.v" Line 52. parameter declaration becomes local in wb_sram32 with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/wb_sram/wb_sram32.v" Line 53. parameter declaration becomes local in wb_sram32 with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sebastian/DIGITAL/Proyecto/rtl/wb_sram/wb_sram32.v" Line 54. parameter declaration becomes local in wb_sram32 with formal parameter declaration list
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_blink/wb_blink.v" into library work
+Parsing module <wb_blink>.
+Analyzing Verilog file "/home/sebastian/DIGITAL/Proyecto/rtl/wb_puls/wb_puls.v" into library work
+Parsing module <wb_puls>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 161: Port m0_cab_i is not connected to this instance
+
+Elaborating module <system>.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 156: Result of 34-bit expression is truncated to fit in 32-bit target.
+
+Elaborating module <wb_conbus_top(s0_addr_w=3,s0_addr=3'b100,s1_addr_w=3,s1_addr=3'b101,s27_addr_w=15,s2_addr=15'b0,s3_addr=15'b111000000000000,s4_addr=15'b111000000000001,s5_addr=15'b111000000000010,s6_addr=15'b111000000000011,s7_addr=15'b111000000000100)>.
+
+Elaborating module <wb_conbus_arb>.
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 237: Assignment to sram0_dat_w ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 238: Assignment to sram0_adr ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 239: Assignment to sram0_sel ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 240: Assignment to sram0_we ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 241: Assignment to sram0_cyc ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 242: Assignment to sram0_stb ignored, since the identifier is never used
+
+Elaborating module <lm32_cpu>.
+
+Elaborating module <lm32_instruction_unit(associativity=1,sets=512,bytes_per_line=16,base_address=32'b0,limit=32'b01111111111111111111111111111111)>.
+
+Elaborating module <lm32_icache(associativity=1,sets=512,bytes_per_line=16,base_address=32'b0,limit=32'b01111111111111111111111111111111)>.
+
+Elaborating module <lm32_ram(data_width=32,address_width=11)>.
+
+Elaborating module <lm32_ram(data_width=20,address_width=9)>.
+"/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_instruction_unit.v" Line 611. $display Instruction bus error. Address: 0
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_cpu.v" Line 726: Assignment to pc_x ignored, since the identifier is never used
+
+Elaborating module <lm32_simtrace>.
+WARNING:HDLCompiler:1499 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_simtrace.v" Line 20: Empty module <lm32_simtrace> remains a black box.
+
+Elaborating module <lm32_decoder>.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_decoder.v" Line 559: Result of 32-bit expression is truncated to fit in 30-bit target.
+
+Elaborating module <lm32_load_store_unit(associativity=1,sets=512,bytes_per_line=16,base_address=0,limit=0)>.
+
+Elaborating module <lm32_adder>.
+
+Elaborating module <lm32_addsub>.
+
+Elaborating module <lm32_logic_op>.
+
+Elaborating module <lm32_shifter>.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_shifter.v" Line 123: Result of 64-bit expression is truncated to fit in 32-bit target.
+
+Elaborating module <lm32_multiplier>.
+
+Elaborating module <lm32_mc_arithmetic>.
+
+Elaborating module <lm32_interrupt>.
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_cpu.v" Line 1896: Assignment to x_result_sel_logic_x ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 336: Assignment to lm32i_cti ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 337: Assignment to lm32i_lock ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 338: Assignment to lm32i_bte ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 350: Assignment to lm32d_cti ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 351: Assignment to lm32d_lock ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 352: Assignment to lm32d_bte ignored, since the identifier is never used
+
+Elaborating module <wb_bram(adr_width=12,mem_file_name="../firmware/boot0-serial/image.ram")>.
+Reading initialization file \"../firmware/boot0-serial/image.ram\".
+
+Elaborating module <wb_uart(clk_freq=100000000,baud=57600)>.
+
+Elaborating module <uart(freq_hz=100000000,baud=57600)>.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v" Line 39: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v" Line 88: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v" Line 91: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v" Line 135: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v" Line 138: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <wb_timer(clk_freq=100000000)>.
+
+Elaborating module <wb_gpio>.
+WARNING:HDLCompiler:189 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 443: Size mismatch in connection of port <gpio_oe>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 443: Assignment to gpio0_oe ignored, since the identifier is never used
+
+Elaborating module <wb_blink>.
+WARNING:HDLCompiler:189 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 466: Size mismatch in connection of port <blink_oe>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 466: Assignment to blink0_oe ignored, since the identifier is never used
+
+Elaborating module <wb_puls>.
+WARNING:HDLCompiler:634 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 33: Net <gpio0_in[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 37: Net <blink0_in[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 76: Net <sram0_dat_r[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 128: Net <sram0_ack> does not have a driver.
+WARNING:HDLCompiler:552 - "/home/sebastian/DIGITAL/Proyecto/system.v" Line 173: Input port m0_cab_i is not connected on this instance
+WARNING:Xst:2972 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_cpu.v" line 761. All outputs of instance <simtrace> of block <lm32_simtrace> are unconnected in block <lm32_cpu>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <system>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/system.v".
+        bootram_file = "../firmware/boot0-serial/image.ram"
+        clk_freq = 100000000
+        uart_baud_rate = 57600
+WARNING:Xst:2898 - Port 'm0_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm1_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm2_we_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm2_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm3_we_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm3_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm4_we_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm4_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm5_we_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm5_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm6_we_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm6_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm7_we_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:2898 - Port 'm7_cab_i', unconnected in block instance 'conmax0', is tied to GND.
+WARNING:Xst:647 - Input <addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sram_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <nwe> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <noe> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ncs> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m2_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m3_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m4_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m5_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m6_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m7_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s0_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s0_adr_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s0_sel_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s1_dat_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s1_adr_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s1_sel_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m2_ack_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m2_err_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m2_rty_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m3_ack_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m3_err_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m3_rty_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m4_ack_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m4_err_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m4_rty_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m5_ack_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m5_err_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m5_rty_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m6_ack_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m6_err_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m6_rty_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m7_ack_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m7_err_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <m7_rty_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s0_we_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s0_cyc_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s0_stb_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s0_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s1_we_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s1_cyc_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s1_stb_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s1_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s2_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s3_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s4_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s5_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s6_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 173: Output port <s7_cab_o> of the instance <conmax0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 323: Output port <I_CTI_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 323: Output port <I_BTE_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 323: Output port <D_CTI_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 323: Output port <D_BTE_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 323: Output port <I_LOCK_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 323: Output port <D_LOCK_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 427: Output port <gpio_oe> of the instance <gpio0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/system.v" line 450: Output port <blink_oe> of the instance <blink0> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <gpio0_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <blink0_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <sram0_dat_r> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <sram0_ack> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <system> synthesized.
+
+Synthesizing Unit <wb_conbus_top>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_conbus/wb_conbus_top.v".
+        s0_addr_w = 3
+        s0_addr = 3'b100
+        s1_addr_w = 3
+        s1_addr = 3'b101
+        s27_addr_w = 15
+        s2_addr = 15'b000000000000000
+        s3_addr = 15'b111000000000000
+        s4_addr = 15'b111000000000001
+        s5_addr = 15'b111000000000010
+        s6_addr = 15'b111000000000011
+        s7_addr = 15'b111000000000100
+    Found 72-bit 8-to-1 multiplexer for signal <i_bus_m> created at line 506.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<7>> created at line 470.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<6>> created at line 465.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<5>> created at line 460.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<4>> created at line 455.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<3>> created at line 450.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<2>> created at line 445.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<1>> created at line 440.
+    Found 1-bit 8-to-1 multiplexer for signal <i_ssel_dec<0>> created at line 435.
+    Summary:
+	inferred  17 Multiplexer(s).
+Unit <wb_conbus_top> synthesized.
+
+Synthesizing Unit <wb_conbus_arb>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_conbus/wb_conbus_arb.v".
+        grant0 = 3'b000
+        grant1 = 3'b001
+        grant2 = 3'b010
+        grant3 = 3'b011
+        grant4 = 3'b100
+        grant5 = 3'b101
+        grant6 = 3'b110
+        grant7 = 3'b111
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 72                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <wb_conbus_arb> synthesized.
+
+Synthesizing Unit <lm32_cpu>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_cpu.v".
+        eba_reset = 32'b00000000000000000000000000000000
+        icache_associativity = 1
+        icache_sets = 512
+        icache_bytes_per_line = 16
+        icache_base_address = 32'b00000000000000000000000000000000
+        icache_limit = 32'b01111111111111111111111111111111
+        dcache_associativity = 1
+        dcache_sets = 512
+        dcache_bytes_per_line = 16
+        dcache_base_address = 0
+        dcache_limit = 0
+        watchpoints = 4'b0000
+        breakpoints = 4'b0000
+        interrupts = 32
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_cpu.v" line 683: Output port <pc_x> of the instance <instruction_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_cpu.v" line 773: Output port <x_result_sel_logic> of the instance <decoder> is unconnected or connected to loadless signal.
+    Found 32-bit register for signal <operand_0_x>.
+    Found 32-bit register for signal <operand_1_x>.
+    Found 32-bit register for signal <store_operand_x>.
+    Found 32-bit register for signal <operand_m>.
+    Found 32-bit register for signal <operand_w>.
+    Found 30-bit register for signal <branch_target_x>.
+    Found 30-bit register for signal <branch_target_m>.
+    Found 5-bit register for signal <write_idx_x>.
+    Found 5-bit register for signal <write_idx_m>.
+    Found 5-bit register for signal <write_idx_w>.
+    Found 3-bit register for signal <csr_x>.
+    Found 3-bit register for signal <condition_x>.
+    Found 2-bit register for signal <size_x>.
+    Found 4-bit register for signal <logic_op_x>.
+    Found 24-bit register for signal <eba>.
+    Found 1-bit register for signal <data_bus_error_exception>.
+    Found 1-bit register for signal <valid_f>.
+    Found 1-bit register for signal <valid_d>.
+    Found 1-bit register for signal <valid_x>.
+    Found 1-bit register for signal <valid_m>.
+    Found 1-bit register for signal <valid_w>.
+    Found 1-bit register for signal <x_result_sel_csr_x>.
+    Found 1-bit register for signal <x_result_sel_mc_arith_x>.
+    Found 1-bit register for signal <x_result_sel_sext_x>.
+    Found 1-bit register for signal <x_result_sel_add_x>.
+    Found 1-bit register for signal <m_result_sel_compare_x>.
+    Found 1-bit register for signal <m_result_sel_shift_x>.
+    Found 1-bit register for signal <w_result_sel_load_x>.
+    Found 1-bit register for signal <w_result_sel_mul_x>.
+    Found 1-bit register for signal <x_bypass_enable_x>.
+    Found 1-bit register for signal <m_bypass_enable_x>.
+    Found 1-bit register for signal <write_enable_x>.
+    Found 1-bit register for signal <load_x>.
+    Found 1-bit register for signal <store_x>.
+    Found 1-bit register for signal <sign_extend_x>.
+    Found 1-bit register for signal <adder_op_x>.
+    Found 1-bit register for signal <adder_op_x_n>.
+    Found 1-bit register for signal <direction_x>.
+    Found 1-bit register for signal <branch_x>.
+    Found 1-bit register for signal <system_call_exception>.
+    Found 1-bit register for signal <eret_x>.
+    Found 1-bit register for signal <instruction_bus_error_exception>.
+    Found 1-bit register for signal <csr_write_enable_x>.
+    Found 1-bit register for signal <m_result_sel_compare_m>.
+    Found 1-bit register for signal <m_result_sel_shift_m>.
+    Found 1-bit register for signal <w_result_sel_load_m>.
+    Found 1-bit register for signal <w_result_sel_mul_m>.
+    Found 1-bit register for signal <m_bypass_enable_m>.
+    Found 1-bit register for signal <branch_m>.
+    Found 1-bit register for signal <exception_m>.
+    Found 1-bit register for signal <load_m>.
+    Found 1-bit register for signal <store_m>.
+    Found 1-bit register for signal <write_enable_m>.
+    Found 1-bit register for signal <condition_met_m>.
+    Found 1-bit register for signal <w_result_sel_load_w>.
+    Found 1-bit register for signal <w_result_sel_mul_w>.
+    Found 1-bit register for signal <write_enable_w>.
+    Found 1-bit register for signal <exception_w>.
+    Found 30-bit adder for signal <pc_d[31]_branch_offset_d[31]_add_172_OUT> created at line 2017.
+    Found 32x32-bit dual-port RAM <Mram_registers> for signal <registers>.
+    Found 32-bit 3-to-1 multiplexer for signal <d_result_1> created at line 1273.
+    Found 1-bit 8-to-1 multiplexer for signal <condition_met_x> created at line 1306.
+    Found 5-bit comparator equal for signal <write_idx_x[4]_read_idx_0_d[4]_equal_3_o> created at line 1217
+    Found 5-bit comparator equal for signal <write_idx_m[4]_read_idx_0_d[4]_equal_5_o> created at line 1218
+    Found 5-bit comparator equal for signal <write_idx_w[4]_read_idx_0_d[4]_equal_7_o> created at line 1219
+    Found 5-bit comparator equal for signal <write_idx_x[4]_read_idx_1_d[4]_equal_9_o> created at line 1220
+    Found 5-bit comparator equal for signal <write_idx_m[4]_read_idx_1_d[4]_equal_11_o> created at line 1221
+    Found 5-bit comparator equal for signal <write_idx_w[4]_read_idx_1_d[4]_equal_13_o> created at line 1222
+    Found 32-bit comparator equal for signal <cmp_zero> created at line 1300
+    Found 1-bit comparator equal for signal <cmp_negative_cmp_overflow_equal_45_o> created at line 1313
+    Summary:
+	inferred   2 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 314 D-type flip-flop(s).
+	inferred   8 Comparator(s).
+	inferred  41 Multiplexer(s).
+Unit <lm32_cpu> synthesized.
+
+Synthesizing Unit <lm32_instruction_unit>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_instruction_unit.v".
+        associativity = 1
+        sets = 512
+        bytes_per_line = 16
+        base_address = 32'b00000000000000000000000000000000
+        limit = 32'b01111111111111111111111111111111
+WARNING:Xst:647 - Input <i_rty_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 30-bit register for signal <pc_f>.
+    Found 3-bit register for signal <i_cti_o>.
+    Found 30-bit register for signal <pc_d>.
+    Found 30-bit register for signal <pc_x>.
+    Found 30-bit register for signal <pc_m>.
+    Found 30-bit register for signal <pc_w>.
+    Found 30-bit register for signal <restart_address>.
+    Found 32-bit register for signal <i_adr_o>.
+    Found 32-bit register for signal <icache_refill_data>.
+    Found 32-bit register for signal <instruction_d>.
+    Found 1-bit register for signal <i_cyc_o>.
+    Found 1-bit register for signal <i_stb_o>.
+    Found 1-bit register for signal <i_lock_o>.
+    Found 1-bit register for signal <icache_refill_ready>.
+    Found 1-bit register for signal <bus_error_f>.
+    Found 1-bit register for signal <bus_error_d>.
+    Found 30-bit adder for signal <pc_f[31]_GND_5_o_add_4_OUT> created at line 397.
+    Found 2-bit adder for signal <i_adr_o[3]_GND_5_o_add_39_OUT> created at line 600.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 284 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+Unit <lm32_instruction_unit> synthesized.
+
+Synthesizing Unit <lm32_icache>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_icache.v".
+        associativity = 1
+        sets = 512
+        bytes_per_line = 16
+        base_address = 32'b00000000000000000000000000000000
+        limit = 32'b01111111111111111111111111111111
+WARNING:Xst:647 - Input <address_a<31:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 9-bit register for signal <flush_set>.
+    Found 2-bit register for signal <refill_offset>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <restart_request>.
+    Found 1-bit register for signal <refilling>.
+    Found 30-bit register for signal <refill_address>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk_i (rising_edge)                            |
+    | Reset              | rst_i (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 9-bit subtractor for signal <flush_set[8]_GND_6_o_sub_20_OUT> created at line 349.
+    Found 2-bit adder for signal <refill_offset[3]_GND_6_o_add_53_OUT> created at line 419.
+    Found 20-bit comparator equal for signal <way_match> created at line 223
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <lm32_icache> synthesized.
+
+Synthesizing Unit <lm32_ram_1>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_ram.v".
+        data_width = 32
+        address_width = 11
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2048x32-bit dual-port RAM <Mram_mem> for signal <mem>.
+    Found 11-bit register for signal <ra>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  11 D-type flip-flop(s).
+Unit <lm32_ram_1> synthesized.
+
+Synthesizing Unit <lm32_ram_2>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_ram.v".
+        data_width = 20
+        address_width = 9
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 512x20-bit dual-port RAM <Mram_mem> for signal <mem>.
+    Found 9-bit register for signal <ra>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   9 D-type flip-flop(s).
+Unit <lm32_ram_2> synthesized.
+
+Synthesizing Unit <lm32_decoder>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_decoder.v".
+    Summary:
+	inferred  14 Multiplexer(s).
+Unit <lm32_decoder> synthesized.
+
+Synthesizing Unit <lm32_load_store_unit>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_load_store_unit.v".
+        associativity = 1
+        sets = 512
+        bytes_per_line = 16
+        base_address = 0
+        limit = 0
+WARNING:Xst:647 - Input <load_store_address_x<31:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <stall_a> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <kill_x> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <d_rty_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <d_dat_o>.
+    Found 32-bit register for signal <d_adr_o>.
+    Found 32-bit register for signal <wb_data_m>.
+    Found 32-bit register for signal <store_data_m>.
+    Found 32-bit register for signal <data_w>.
+    Found 4-bit register for signal <d_sel_o>.
+    Found 4-bit register for signal <byte_enable_m>.
+    Found 2-bit register for signal <size_m>.
+    Found 2-bit register for signal <size_w>.
+    Found 1-bit register for signal <d_stb_o>.
+    Found 1-bit register for signal <d_we_o>.
+    Found 1-bit register for signal <wb_load_complete>.
+    Found 1-bit register for signal <stall_wb_load>.
+    Found 1-bit register for signal <sign_extend_m>.
+    Found 1-bit register for signal <wb_select_m>.
+    Found 1-bit register for signal <sign_extend_w>.
+    Found 1-bit register for signal <d_cyc_o>.
+    Found 32-bit 3-to-1 multiplexer for signal <store_data_x> created at line 309.
+    Summary:
+	inferred 180 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <lm32_load_store_unit> synthesized.
+
+Synthesizing Unit <lm32_adder>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_adder.v".
+    Summary:
+	no macro.
+Unit <lm32_adder> synthesized.
+
+Synthesizing Unit <lm32_addsub>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_addsub.v".
+    Found 33-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 63.
+    Found 33-bit subtractor for signal <tmp_subResult> created at line 63.
+    Found 33-bit adder for signal <n0025> created at line 62.
+    Found 33-bit adder for signal <tmp_addResult> created at line 62.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
+Unit <lm32_addsub> synthesized.
+
+Synthesizing Unit <lm32_logic_op>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_logic_op.v".
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<0>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<1>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<2>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<3>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<4>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<5>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<6>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<7>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<8>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<9>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<10>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<11>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<12>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<13>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<14>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<15>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<16>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<17>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<18>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<19>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<20>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<21>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<22>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<23>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<24>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<25>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<26>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<27>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<28>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<29>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<30>> created at line 67.
+    Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<31>> created at line 67.
+    Summary:
+	inferred  32 Multiplexer(s).
+Unit <lm32_logic_op> synthesized.
+
+Synthesizing Unit <lm32_shifter>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_shifter.v".
+WARNING:Xst:647 - Input <operand_1_x<31:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <right_shift_result>.
+    Found 1-bit register for signal <direction_m>.
+    Found 64-bit shifter logical right for signal <n0026> created at line 123
+    Summary:
+	inferred  33 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+Unit <lm32_shifter> synthesized.
+
+Synthesizing Unit <lm32_multiplier>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_multiplier.v".
+    Found 32-bit register for signal <multiplier>.
+    Found 32-bit register for signal <product>.
+    Found 32-bit register for signal <result>.
+    Found 32-bit register for signal <muliplicand>.
+    Found 32x32-bit multiplier for signal <n0019> created at line 89.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred 128 D-type flip-flop(s).
+Unit <lm32_multiplier> synthesized.
+
+Synthesizing Unit <lm32_mc_arithmetic>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_mc_arithmetic.v".
+    Found 32-bit register for signal <p>.
+    Found 32-bit register for signal <a>.
+    Found 32-bit register for signal <b>.
+    Found 32-bit register for signal <result_x>.
+    Found 3-bit register for signal <state>.
+    Found 6-bit register for signal <cycles>.
+    Found 1-bit register for signal <divide_by_zero_x>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk_i (rising_edge)                            |
+    | Reset              | rst_i (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 33-bit subtractor for signal <t> created at line 130.
+    Found 6-bit subtractor for signal <cycles[5]_GND_20_o_sub_20_OUT> created at line 224.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 135 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <lm32_mc_arithmetic> synthesized.
+
+Synthesizing Unit <lm32_interrupt>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lm32/lm32_interrupt.v".
+        interrupts = 32
+    Found 32-bit register for signal <im>.
+    Found 32-bit register for signal <ip>.
+    Found 1-bit register for signal <eie>.
+    Found 1-bit register for signal <ie>.
+    Found 32-bit 3-to-1 multiplexer for signal <csr_read_data> created at line 97.
+    Summary:
+	inferred  66 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <lm32_interrupt> synthesized.
+
+Synthesizing Unit <wb_bram>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_bram/wb_bram.v".
+        mem_file_name = "../firmware/boot0-serial/image.ram"
+        adr_width = 12
+WARNING:Xst:647 - Input <wb_adr_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_adr_i<31:12>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1024x32-bit single-port RAM <Mram_ram> for signal <ram>.
+    Found 1-bit register for signal <ack>.
+    Found 32-bit register for signal <wb_dat_o>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  33 D-type flip-flop(s).
+Unit <wb_bram> synthesized.
+
+Synthesizing Unit <wb_uart>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_uart/wb_uart.v".
+        clk_freq = 100000000
+        baud = 57600
+WARNING:Xst:647 - Input <wb_adr_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_adr_i<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_sel_i<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_dat_i<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <wb_dat_o<7>>.
+    Found 1-bit register for signal <wb_dat_o<6>>.
+    Found 1-bit register for signal <wb_dat_o<5>>.
+    Found 1-bit register for signal <wb_dat_o<4>>.
+    Found 1-bit register for signal <wb_dat_o<3>>.
+    Found 1-bit register for signal <wb_dat_o<2>>.
+    Found 1-bit register for signal <wb_dat_o<1>>.
+    Found 1-bit register for signal <wb_dat_o<0>>.
+    Found 1-bit register for signal <tx_wr>.
+    Found 1-bit register for signal <rx_ack>.
+    Found 1-bit register for signal <ack>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<8><2:2>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<15><8:8>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<25><15:15>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<31><25:25>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<30><31:31>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<29><30:30>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<28><29:29>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<27><28:28>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<26><27:27>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<24><26:26>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<23><24:24>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<22><23:23>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<21><22:22>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<20><21:21>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<19><20:20>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<18><19:19>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<17><18:18>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<16><17:17>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<14><16:16>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<13><14:14>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<12><13:13>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<11><12:12>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<10><11:11>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<9><10:10>> (without init value) have a constant value of 0 in block <wb_uart>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <wb_uart> synthesized.
+
+Synthesizing Unit <uart>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/lac/uart.v".
+        freq_hz = 100000000
+        baud = 57600
+    Found 1-bit register for signal <uart_rxd1>.
+    Found 1-bit register for signal <uart_rxd2>.
+    Found 1-bit register for signal <rx_busy>.
+    Found 4-bit register for signal <rx_count16>.
+    Found 4-bit register for signal <rx_bitcount>.
+    Found 1-bit register for signal <rx_avail>.
+    Found 1-bit register for signal <rx_error>.
+    Found 8-bit register for signal <rx_data>.
+    Found 8-bit register for signal <rxd_reg>.
+    Found 1-bit register for signal <tx_busy>.
+    Found 1-bit register for signal <uart_txd>.
+    Found 8-bit register for signal <txd_reg>.
+    Found 4-bit register for signal <tx_bitcount>.
+    Found 4-bit register for signal <tx_count16>.
+    Found 16-bit register for signal <enable16_counter>.
+    Found 4-bit adder for signal <rx_count16[3]_GND_24_o_add_11_OUT> created at line 88.
+    Found 4-bit adder for signal <rx_bitcount[3]_GND_24_o_add_13_OUT> created at line 91.
+    Found 4-bit adder for signal <tx_count16[3]_GND_24_o_add_41_OUT> created at line 135.
+    Found 4-bit adder for signal <tx_bitcount[3]_GND_24_o_add_43_OUT> created at line 138.
+    Found 16-bit subtractor for signal <GND_24_o_GND_24_o_sub_3_OUT<15:0>> created at line 39.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  63 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <uart> synthesized.
+
+Synthesizing Unit <wb_timer>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_timer/wb_timer.v".
+        clk_freq = 100000000
+WARNING:Xst:647 - Input <wb_adr_i<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <en0>.
+    Found 1-bit register for signal <en1>.
+    Found 1-bit register for signal <ar0>.
+    Found 1-bit register for signal <ar1>.
+    Found 1-bit register for signal <trig0>.
+    Found 1-bit register for signal <trig1>.
+    Found 32-bit register for signal <counter0>.
+    Found 32-bit register for signal <counter1>.
+    Found 32-bit register for signal <compare0>.
+    Found 32-bit register for signal <compare1>.
+    Found 32-bit register for signal <wb_dat_o>.
+    Found 1-bit register for signal <irqen0>.
+    Found 1-bit register for signal <irqen1>.
+    Found 1-bit register for signal <ack>.
+    Found 32-bit adder for signal <counter0[31]_GND_25_o_add_6_OUT> created at line 92.
+    Found 32-bit adder for signal <counter1[31]_GND_25_o_add_9_OUT> created at line 98.
+    Found 32-bit 7-to-1 multiplexer for signal <_n0180> created at line 109.
+    Found 32-bit comparator equal for signal <match0> created at line 64
+    Found 32-bit comparator equal for signal <match1> created at line 65
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 169 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  19 Multiplexer(s).
+Unit <wb_timer> synthesized.
+
+Synthesizing Unit <wb_gpio>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_gpio/wb_gpio.v".
+WARNING:Xst:647 - Input <wb_adr_i<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <intr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <gpio_out>.
+    Found 32-bit register for signal <wb_dat_o>.
+    Found 32-bit register for signal <gpio_oe>.
+    Found 1-bit register for signal <ack>.
+    Summary:
+	inferred  97 D-type flip-flop(s).
+Unit <wb_gpio> synthesized.
+
+Synthesizing Unit <wb_blink>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_blink/wb_blink.v".
+WARNING:Xst:647 - Input <wb_adr_i<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <intr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <blink_out>.
+    Found 32-bit register for signal <wb_dat_o>.
+    Found 32-bit register for signal <blink_oe>.
+    Found 1-bit register for signal <ack>.
+    Summary:
+	inferred  97 D-type flip-flop(s).
+Unit <wb_blink> synthesized.
+
+Synthesizing Unit <wb_puls>.
+    Related source file is "/home/sebastian/DIGITAL/Proyecto/rtl/wb_puls/wb_puls.v".
+WARNING:Xst:647 - Input <wb_adr_i<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_dat_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <intr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <wb_dat_o>.
+    Found 1-bit register for signal <ack>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+Unit <wb_puls> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 1024x32-bit single-port RAM                           : 1
+ 2048x32-bit dual-port RAM                             : 1
+ 32x32-bit dual-port RAM                               : 2
+ 512x20-bit dual-port RAM                              : 1
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 18
+ 16-bit subtractor                                     : 1
+ 2-bit adder                                           : 2
+ 30-bit adder                                          : 2
+ 32-bit adder                                          : 2
+ 33-bit adder                                          : 2
+ 33-bit subtractor                                     : 3
+ 4-bit adder                                           : 4
+ 6-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 1
+# Registers                                            : 165
+ 1-bit register                                        : 93
+ 11-bit register                                       : 1
+ 16-bit register                                       : 1
+ 2-bit register                                        : 4
+ 24-bit register                                       : 1
+ 3-bit register                                        : 3
+ 30-bit register                                       : 9
+ 32-bit register                                       : 37
+ 4-bit register                                        : 7
+ 5-bit register                                        : 3
+ 6-bit register                                        : 1
+ 8-bit register                                        : 3
+ 9-bit register                                        : 2
+# Comparators                                          : 11
+ 1-bit comparator equal                                : 1
+ 20-bit comparator equal                               : 1
+ 32-bit comparator equal                               : 3
+ 5-bit comparator equal                                : 6
+# Multiplexers                                         : 171
+ 1-bit 2-to-1 multiplexer                              : 50
+ 1-bit 4-to-1 multiplexer                              : 32
+ 1-bit 8-to-1 multiplexer                              : 9
+ 16-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 4
+ 30-bit 2-to-1 multiplexer                             : 4
+ 32-bit 2-to-1 multiplexer                             : 56
+ 32-bit 3-to-1 multiplexer                             : 3
+ 32-bit 7-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 3
+ 6-bit 2-to-1 multiplexer                              : 1
+ 72-bit 8-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 1
+ 64-bit shifter logical right                          : 1
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <wb_dat_o_2> in Unit <puls0> is equivalent to the following 29 FFs/Latches, which will be removed : <wb_dat_o_3> <wb_dat_o_4> <wb_dat_o_5> <wb_dat_o_6> <wb_dat_o_7> <wb_dat_o_8> <wb_dat_o_9> <wb_dat_o_10> <wb_dat_o_11> <wb_dat_o_12> <wb_dat_o_13> <wb_dat_o_14> <wb_dat_o_15> <wb_dat_o_16> <wb_dat_o_17> <wb_dat_o_18> <wb_dat_o_19> <wb_dat_o_20> <wb_dat_o_21> <wb_dat_o_22> <wb_dat_o_23> <wb_dat_o_24> <wb_dat_o_25> <wb_dat_o_26> <wb_dat_o_27> <wb_dat_o_28> <wb_dat_o_29> <wb_dat_o_30> <wb_dat_o_31> 
+INFO:Xst:2261 - The FF/Latch <i_cyc_o> in Unit <instruction_unit> is equivalent to the following FF/Latch, which will be removed : <i_stb_o> 
+WARNING:Xst:1710 - FF/Latch <wb_dat_o_2> (without init value) has a constant value of 0 in block <puls0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<31:2>> (without init value) have a constant value of 0 in block <wb_puls>.
+
+Synthesizing (advanced) Unit <lm32_cpu>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_registers> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk_i>         | rise     |
+    |     weA            | connected to signal <reg_write_enable_q_w> | high     |
+    |     addrA          | connected to signal <write_idx_w>   |          |
+    |     diA            | connected to signal <w_result>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <read_idx_0_d>  |          |
+    |     doB            | connected to signal <reg_data_0>    |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_registers1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk_i>         | rise     |
+    |     weA            | connected to signal <reg_write_enable_q_w> | high     |
+    |     addrA          | connected to signal <write_idx_w>   |          |
+    |     diA            | connected to signal <w_result>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <read_idx_1_d>  |          |
+    |     doB            | connected to signal <reg_data_1>    |          |
+    -----------------------------------------------------------------------
+Unit <lm32_cpu> synthesized (advanced).
+
+Synthesizing (advanced) Unit <lm32_icache>.
+The following registers are absorbed into counter <flush_set>: 1 register on signal <flush_set>.
+Unit <lm32_icache> synthesized (advanced).
+
+Synthesizing (advanced) Unit <lm32_mc_arithmetic>.
+The following registers are absorbed into counter <cycles>: 1 register on signal <cycles>.
+Unit <lm32_mc_arithmetic> synthesized (advanced).
+
+Synthesizing (advanced) Unit <lm32_ram_1>.
+INFO:Xst:3226 - The RAM <Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <ra>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 2048-word x 32-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <write_clk>     | rise     |
+    |     weA            | connected to signal <write_enable>  | high     |
+    |     addrA          | connected to signal <write_address> |          |
+    |     diA            | connected to signal <write_data>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 2048-word x 32-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <read_clk>      | rise     |
+    |     addrB          | connected to signal <read_address>  |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <lm32_ram_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <lm32_ram_2>.
+INFO:Xst:3226 - The RAM <Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <ra>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 512-word x 20-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <write_clk>     | rise     |
+    |     weA            | connected to signal <write_enable>  | high     |
+    |     addrA          | connected to signal <write_address> |          |
+    |     diA            | connected to signal <write_data>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 512-word x 20-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <read_clk>      | rise     |
+    |     addrB          | connected to signal <read_address>  |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <lm32_ram_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart>.
+The following registers are absorbed into counter <enable16_counter>: 1 register on signal <enable16_counter>.
+The following registers are absorbed into counter <rx_count16>: 1 register on signal <rx_count16>.
+The following registers are absorbed into counter <rx_bitcount>: 1 register on signal <rx_bitcount>.
+The following registers are absorbed into counter <tx_count16>: 1 register on signal <tx_count16>.
+The following registers are absorbed into counter <tx_bitcount>: 1 register on signal <tx_bitcount>.
+Unit <uart> synthesized (advanced).
+
+Synthesizing (advanced) Unit <wb_bram>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <wb_dat_o>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 32-bit                  |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk_i>         | rise     |
+    |     enA            | connected to internal node          | high     |
+    |     weA            | connected to signal <wb_we_i>       | high     |
+    |     addrA          | connected to signal <wb_adr_i>      |          |
+    |     diA            | connected to signal <wb_dat_i>      |          |
+    |     doA            | connected to signal <wb_dat_o>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <wb_bram> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 1024x32-bit single-port block RAM                     : 1
+ 2048x32-bit dual-port block RAM                       : 1
+ 32x32-bit dual-port distributed RAM                   : 2
+ 512x20-bit dual-port block RAM                        : 1
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 9
+ 2-bit adder                                           : 2
+ 30-bit adder                                          : 2
+ 32-bit adder                                          : 2
+ 33-bit adder carry in                                 : 1
+ 33-bit subtractor                                     : 1
+ 33-bit subtractor borrow in                           : 1
+# Counters                                             : 7
+ 16-bit down counter                                   : 1
+ 4-bit up counter                                      : 4
+ 6-bit down counter                                    : 1
+ 9-bit down counter                                    : 1
+# Registers                                            : 1597
+ Flip-Flops                                            : 1597
+# Comparators                                          : 11
+ 1-bit comparator equal                                : 1
+ 20-bit comparator equal                               : 1
+ 32-bit comparator equal                               : 3
+ 5-bit comparator equal                                : 6
+# Multiplexers                                         : 292
+ 1-bit 2-to-1 multiplexer                              : 177
+ 1-bit 4-to-1 multiplexer                              : 32
+ 1-bit 8-to-1 multiplexer                              : 9
+ 2-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 4
+ 30-bit 2-to-1 multiplexer                             : 4
+ 32-bit 2-to-1 multiplexer                             : 52
+ 32-bit 3-to-1 multiplexer                             : 3
+ 32-bit 7-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 3
+ 72-bit 8-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 1
+ 64-bit shifter logical right                          : 1
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <i_cyc_o> in Unit <lm32_instruction_unit> is equivalent to the following FF/Latch, which will be removed : <i_stb_o> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <conmax0/FSM_0> on signal <state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 111   | 001
+ 110   | 010
+ 101   | 011
+ 100   | 100
+ 011   | 101
+ 010   | 110
+ 001   | 111
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <lm0/instruction_unit/icache/FSM_1> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0010  | 01
+ 0100  | 10
+ 1000  | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <lm0/mc_arithmetic/FSM_2> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 011   | 01
+ 010   | 10
+-------------------
+WARNING:Xst:2677 - Node <Mmult_n00193> of sequential type is unconnected in block <lm32_multiplier>.
+WARNING:Xst:1710 - FF/Latch <i_adr_o_0> (without init value) has a constant value of 0 in block <lm32_instruction_unit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i_adr_o_1> (without init value) has a constant value of 0 in block <lm32_instruction_unit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i_cti_o_1> (without init value) has a constant value of 1 in block <lm32_instruction_unit>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <i_cti_o_0> in Unit <lm32_instruction_unit> is equivalent to the following FF/Latch, which will be removed : <i_cti_o_2> 
+
+Optimizing unit <system> ...
+
+Optimizing unit <wb_puls> ...
+
+Optimizing unit <wb_conbus_top> ...
+
+Optimizing unit <lm32_cpu> ...
+
+Optimizing unit <lm32_interrupt> ...
+WARNING:Xst:1710 - FF/Latch <ip_31> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_30> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_29> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_28> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_27> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_26> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_25> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_24> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_23> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_22> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_21> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_20> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_19> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_18> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_17> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_16> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_15> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_14> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_13> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_12> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_11> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_10> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_9> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_8> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_6> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_0> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ip_31> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_30> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_29> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_28> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_27> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_26> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_25> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_24> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_23> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_22> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_21> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_20> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_19> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_18> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_17> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_16> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_15> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_14> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_13> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_12> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_11> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_10> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_9> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_8> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_6> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ip_0> (without init value) has a constant value of 0 in block <lm32_interrupt>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <lm32_instruction_unit> ...
+
+Optimizing unit <lm32_icache> ...
+
+Optimizing unit <lm32_ram_1> ...
+
+Optimizing unit <lm32_ram_2> ...
+
+Optimizing unit <lm32_load_store_unit> ...
+INFO:Xst:2261 - The FF/Latch <d_stb_o> in Unit <lm32_load_store_unit> is equivalent to the following FF/Latch, which will be removed : <d_cyc_o> 
+
+Optimizing unit <lm32_shifter> ...
+
+Optimizing unit <lm32_multiplier> ...
+
+Optimizing unit <lm32_mc_arithmetic> ...
+
+Optimizing unit <lm32_decoder> ...
+
+Optimizing unit <wb_uart> ...
+
+Optimizing unit <uart> ...
+
+Optimizing unit <wb_timer> ...
+
+Optimizing unit <wb_gpio> ...
+
+Optimizing unit <wb_blink> ...
+WARNING:Xst:1710 - FF/Latch <lm0/interrupt/ip_5> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lm0/interrupt/ip_4> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lm0/interrupt/ip_2> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/i_cti_o_0> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/i_adr_o_31> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/i_adr_o_15> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/i_adr_o_14> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/i_adr_o_13> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/i_adr_o_12> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_31> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_30> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_29> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_28> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_27> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_26> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_25> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_24> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_23> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_22> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_21> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_20> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_19> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_18> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_17> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_16> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_15> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_14> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_13> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_12> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_11> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_10> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_9> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_8> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_7> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_6> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_5> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_4> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_3> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/instruction_unit/pc_w_2> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_sel_o_3> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_sel_o_2> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_sel_o_1> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/byte_enable_m_3> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/byte_enable_m_2> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/byte_enable_m_1> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_adr_o_31> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_adr_o_15> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_adr_o_14> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_adr_o_13> of sequential type is unconnected in block <system>.
+WARNING:Xst:2677 - Node <lm0/load_store_unit/d_adr_o_12> of sequential type is unconnected in block <system>.
+WARNING:Xst:1710 - FF/Latch <lm0/data_bus_error_seen> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lm0/instruction_unit/bus_error_f> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_14> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_13> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_15> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_11> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_10> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_12> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_8> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_7> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart0/uart0/enable16_counter_9> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lm0/instruction_unit/bus_error_d> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lm0/bus_error_x> (without init value) has a constant value of 0 in block <system>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_10> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_10> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_11> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_11> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_12> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_12> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_13> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_13> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_14> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_14> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_20> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_20> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_15> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_15> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_21> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_21> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_16> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_16> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_22> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_22> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_17> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_17> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_23> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_23> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_18> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_18> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_24> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_24> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_19> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_19> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_30> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_30> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_25> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_25> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_31> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_31> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_26> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_26> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_27> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_27> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_28> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_28> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_29> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_29> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_0> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_0> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_1> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_1> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_2> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_2> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_3> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_3> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_4> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_4> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_5> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_5> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_6> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_6> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_7> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_7> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_8> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_8> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_9> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_9> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_10> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_8> 
+INFO:Xst:2261 - The FF/Latch <lm0/logic_op_x_2> in Unit <system> is equivalent to the following 2 FFs/Latches, which will be removed : <lm0/sign_extend_x> <lm0/condition_x_2> 
+INFO:Xst:2261 - The FF/Latch <lm0/logic_op_x_3> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/direction_x> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_0> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_0> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_1> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_1> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_2> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_2> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_3> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_3> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_4> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_4> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_5> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_5> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_6> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_6> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_7> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_7> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_8> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_8> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/muliplicand_9> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_0_x_9> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_x> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/w_result_sel_load_x> 
+INFO:Xst:2261 - The FF/Latch <lm0/size_x_0> in Unit <system> is equivalent to the following 2 FFs/Latches, which will be removed : <lm0/logic_op_x_0> <lm0/condition_x_0> 
+INFO:Xst:2261 - The FF/Latch <lm0/size_x_1> in Unit <system> is equivalent to the following 2 FFs/Latches, which will be removed : <lm0/logic_op_x_1> <lm0/condition_x_1> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_10> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_10> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_11> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_11> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_12> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_12> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_13> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_13> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_14> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_14> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_20> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_20> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_15> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_15> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_21> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_21> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_16> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_16> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_22> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_22> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_17> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_17> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_23> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_23> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_18> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_18> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_24> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_24> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_2> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_0> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_19> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_19> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_30> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_30> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_3> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_1> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_25> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_25> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_31> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_31> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_4> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_2> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_26> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_26> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_27> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_27> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_5> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_3> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_28> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_28> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_6> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_4> 
+INFO:Xst:2261 - The FF/Latch <lm0/multiplier/multiplier_29> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/operand_1_x_29> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_7> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_5> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_8> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_6> 
+INFO:Xst:2261 - The FF/Latch <lm0/instruction_unit/icache/memories[0].way_0_data_ram/ra_9> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/instruction_unit/icache/memories[0].way_0_tag_ram/ra_7> 
+INFO:Xst:2261 - The FF/Latch <conmax0/wb_conbus_arb/state_FSM_FFd3> in Unit <system> is equivalent to the following 2 FFs/Latches, which will be removed : <conmax0/wb_conbus_arb/state_FSM_FFd1> <conmax0/wb_conbus_arb/state_FSM_FFd2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 32.
+Forward register balancing over carry chain lm0/Mcompar_cmp_zero_cy<0>
+Forward register balancing over carry chain lm0/adder/addsub/Madd_tmp_addResult_Madd_cy<0>
+Forward register balancing over carry chain lm0/adder/addsub/Msub_tmp_subResult_Madd_cy<0>
+INFO:Xst:2261 - The FF/Latch <lm0/m_result_sel_shift_x> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/m_bypass_enable_x_BRB0> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_0> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_8_BRB1> <lm0/load_store_unit/store_data_m_16_BRB0> <lm0/load_store_unit/store_data_m_24_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_1> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_9_BRB1> <lm0/load_store_unit/store_data_m_17_BRB0> <lm0/load_store_unit/store_data_m_25_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_2> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_10_BRB1> <lm0/load_store_unit/store_data_m_18_BRB0> <lm0/load_store_unit/store_data_m_26_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_3> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_11_BRB1> <lm0/load_store_unit/store_data_m_19_BRB0> <lm0/load_store_unit/store_data_m_27_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_4> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_12_BRB1> <lm0/load_store_unit/store_data_m_20_BRB0> <lm0/load_store_unit/store_data_m_28_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_5> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_13_BRB1> <lm0/load_store_unit/store_data_m_21_BRB0> <lm0/load_store_unit/store_data_m_29_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_6> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_14_BRB1> <lm0/load_store_unit/store_data_m_22_BRB0> <lm0/load_store_unit/store_data_m_30_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/x_bypass_enable_x> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/m_bypass_enable_x_BRB1> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/store_data_m_7> in Unit <system> is equivalent to the following 3 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_15_BRB1> <lm0/load_store_unit/store_data_m_23_BRB0> <lm0/load_store_unit/store_data_m_31_BRB4> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_m> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/w_result_sel_load_m_BRB0> 
+INFO:Xst:2261 - The FF/Latch <lm0/m_result_sel_compare_x> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/m_bypass_enable_x_BRB2> 
+INFO:Xst:2261 - The FF/Latch <lm0/load_store_unit/size_m_1> in Unit <system> is equivalent to the following 16 FFs/Latches, which will be removed : <lm0/load_store_unit/store_data_m_15_BRB0> <lm0/load_store_unit/store_data_m_14_BRB0> <lm0/load_store_unit/store_data_m_13_BRB0> <lm0/load_store_unit/store_data_m_12_BRB0> <lm0/load_store_unit/store_data_m_11_BRB0> <lm0/load_store_unit/store_data_m_10_BRB0> <lm0/load_store_unit/store_data_m_9_BRB0> <lm0/load_store_unit/store_data_m_8_BRB0> <lm0/load_store_unit/store_data_m_31_BRB0> <lm0/load_store_unit/store_data_m_30_BRB0> <lm0/load_store_unit/store_data_m_29_BRB0> <lm0/load_store_unit/store_data_m_28_BRB0> <lm0/load_store_unit/store_data_m_27_BRB0> <lm0/load_store_unit/store_data_m_26_BRB0> <lm0/load_store_unit/store_data_m_25_BRB0> <lm0/load_store_unit/store_data_m_24_BRB0> 
+INFO:Xst:2261 - The FF/Latch <lm0/size_x_1> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <lm0/w_result_sel_mul_x_BRB0> 
+
+Pipelining and Register Balancing Report ...
+
+Processing Unit <system> :
+	Register(s) lm0/branch_x has(ve) been backward balanced into : lm0/branch_x_BRB0 lm0/branch_x_BRB1 lm0/branch_x_BRB2 lm0/branch_x_BRB3 lm0/branch_x_BRB4 lm0/branch_x_BRB5.
+	Register(s) lm0/load_store_unit/byte_enable_m_0 has(ve) been backward balanced into : lm0/load_store_unit/byte_enable_m_0_BRB0 lm0/load_store_unit/byte_enable_m_0_BRB1 lm0/load_store_unit/byte_enable_m_0_BRB2 lm0/load_store_unit/byte_enable_m_0_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_10 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_10_BRB2.
+	Register(s) lm0/load_store_unit/store_data_m_11 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_11_BRB2.
+	Register(s) lm0/load_store_unit/store_data_m_12 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_12_BRB2.
+	Register(s) lm0/load_store_unit/store_data_m_13 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_13_BRB2.
+	Register(s) lm0/load_store_unit/store_data_m_14 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_14_BRB2.
+	Register(s) lm0/load_store_unit/store_data_m_15 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_15_BRB2.
+	Register(s) lm0/load_store_unit/store_data_m_16 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_16_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_17 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_17_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_18 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_18_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_19 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_19_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_20 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_20_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_21 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_21_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_22 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_22_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_23 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_23_BRB3.
+	Register(s) lm0/load_store_unit/store_data_m_24 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_24_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_25 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_25_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_26 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_26_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_27 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_27_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_28 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_28_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_29 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_29_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_30 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_30_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_31 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_31_BRB1 lm0/load_store_unit/store_data_m_31_BRB3 .
+	Register(s) lm0/load_store_unit/store_data_m_8 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_8_BRB2.
+	Register(s) lm0/load_store_unit/store_data_m_9 has(ve) been backward balanced into : lm0/load_store_unit/store_data_m_9_BRB2.
+	Register(s) lm0/store_x has(ve) been backward balanced into : lm0/store_x_BRB0 lm0/store_x_BRB5.
+	Register(s) lm0/w_result_sel_mul_m has(ve) been backward balanced into : lm0/w_result_sel_mul_m_BRB0 lm0/w_result_sel_mul_m_BRB1.
+Unit <system> processed.
+FlipFlop blink0/blink_out_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop blink0/blink_out_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_7 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_6 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_5 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop gpio0/gpio_out_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop uart0/uart0/uart_txd has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1558
+ Flip-Flops                                            : 1558
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : system.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2282
+#      GND                         : 1
+#      INV                         : 22
+#      LUT1                        : 93
+#      LUT2                        : 123
+#      LUT3                        : 251
+#      LUT4                        : 150
+#      LUT5                        : 467
+#      LUT6                        : 662
+#      MUXCY                       : 270
+#      MUXF7                       : 4
+#      VCC                         : 1
+#      XORCY                       : 238
+# FlipFlops/Latches                : 1558
+#      FD                          : 11
+#      FDC                         : 130
+#      FDCE                        : 835
+#      FDE                         : 229
+#      FDPE                        : 75
+#      FDR                         : 18
+#      FDRE                        : 188
+#      FDS                         : 7
+#      FDSE                        : 65
+# RAMS                             : 71
+#      RAM32X1D                    : 64
+#      RAMB16BWER                  : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 4
+#      OBUF                        : 12
+# DSPs                             : 3
+#      DSP48A1                     : 3
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1544  out of  18224     8%  
+ Number of Slice LUTs:                 1896  out of   9112    20%  
+    Number used as Logic:              1768  out of   9112    19%  
+    Number used as Memory:              128  out of   2176     5%  
+       Number used as RAM:              128
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2278
+   Number with an unused Flip Flop:     734  out of   2278    32%  
+   Number with an unused LUT:           382  out of   2278    16%  
+   Number of fully used LUT-FF pairs:  1162  out of   2278    51%  
+   Number of unique control sets:        45
+
+IO Utilization: 
+ Number of IOs:                          41
+ Number of bonded IOBs:                  17  out of    232     7%  
+    IOB Flip Flops/Latches:              14
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                7  out of     32    21%  
+    Number using Block RAM only:          7
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      3  out of     32     9%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1629  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 13.084ns (Maximum Frequency: 76.430MHz)
+   Minimum input arrival time before clock: 6.103ns
+   Maximum output required time after clock: 4.419ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 13.084ns (frequency: 76.430MHz)
+  Total number of paths / destination ports: 1788785 / 4007
+-------------------------------------------------------------------------
+Delay:               13.084ns (Levels of Logic = 3)
+  Source:            lm0/multiplier/multiplier_3 (FF)
+  Destination:       lm0/multiplier/product_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: lm0/multiplier/multiplier_3 to lm0/multiplier/product_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            52   0.447   1.560  lm0/multiplier/multiplier_3 (lm0/multiplier/multiplier_3)
+     DSP48A1:B3->P47      18   4.394   1.049  lm0/multiplier/Mmult_n0019 (lm0/multiplier/Mmult_n0019_P47_to_Mmult_n00191)
+     DSP48A1:C30->PCOUT47    1   2.689   0.000  lm0/multiplier/Mmult_n00191 (lm0/multiplier/Mmult_n00191_PCOUT_to_Mmult_n00192_PCIN_47)
+     DSP48A1:PCIN47->P14    1   2.264   0.579  lm0/multiplier/Mmult_n00192 (lm0/multiplier/n0019<31>)
+     FDCE:D                    0.102          lm0/multiplier/product_31
+    ----------------------------------------
+    Total                     13.084ns (9.896ns logic, 3.188ns route)
+                                       (75.6% logic, 24.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1535 / 1535
+-------------------------------------------------------------------------
+Offset:              6.103ns (Levels of Logic = 3)
+  Source:            rst (PAD)
+  Destination:       gpio0/gpio_oe_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to gpio0/gpio_oe_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1291   1.222   2.278  rst_IBUF (blink0/reset_inv)
+     LUT4:I3->O            1   0.205   0.580  gpio0/_n0071_inv_SW0 (N132)
+     LUT6:I5->O           32   0.205   1.291  gpio0/_n0071_inv (gpio0/_n0071_inv)
+     FDE:CE                    0.322          gpio0/gpio_oe_0
+    ----------------------------------------
+    Total                      6.103ns (1.954ns logic, 4.149ns route)
+                                       (32.0% logic, 68.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              4.419ns (Levels of Logic = 2)
+  Source:            uart0/uart0/uart_txd (FF)
+  Destination:       led (PAD)
+  Source Clock:      clk rising
+
+  Data Path: uart0/uart0/uart_txd to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              2   0.447   0.616  uart0/uart0/uart_txd (uart0/uart0/uart_txd)
+     INV:I->O              1   0.206   0.579  led1_INV_0 (led_OBUF)
+     OBUF:I->O                 2.571          led_OBUF (led)
+    ----------------------------------------
+    Total                      4.419ns (3.224ns logic, 1.195ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   13.084|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 67.00 secs
+Total CPU time to Xst completion: 66.62 secs
+ 
+--> 
+
+
+Total memory usage is 411416 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  231 (   0 filtered)
+Number of infos    :  157 (   0 filtered)
+

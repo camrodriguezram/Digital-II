@@ -1,0 +1,36 @@
+
+# ==== Cloclk inputs (CLK) ====
+
+NET "clk"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";
+NET "clk" TNM_NET = sys_clk;
+TIMESPEC TS_sys_clk = PERIOD sys_clk_pin 100 MHz HIGH 50%; 
+
+NET "rst"	LOC = "C12"	| IOSTANDARD = "LVCMOS33";
+NET "led"	LOC = "T8"	| IOSTANDARD = "LVCMOS33";
+
+
+# ==== UART ====
+NET "uart_txd"	LOC = "K1"	| IOSTANDARD = "LVCMOS33";		
+NET "uart_rxd"	LOC = "K2"	| IOSTANDARD = "LVCMOS33";		
+
+# ==== SPI ====
+NET "spi_miso"	LOC = "P2"	| IOSTANDARD = "LVCMOS33";		
+NET "spi_mosi"	LOC = "R2"	| IOSTANDARD = "LVCMOS33";			
+NET "spi_clk"	LOC = "U1"	| IOSTANDARD = "LVCMOS33";		
+
+# ==== I2C ====
+#NET "i2c_sda"	LOC = "V9"	| IOSTANDARD = "LVCMOS33";		
+#NET "i2c_clk"	LOC = "R8"	| IOSTANDARD = "LVCMOS33";
+
+
+# ===== GPIO ===== PMOD JA
+
+NET "gpio0_io<0>" LOC = "B13" 	| IOSTANDARD = "LVCMOS33"; ##Pin 1
+NET "gpio0_io<1>" LOC = "F14" 	| IOSTANDARD = "LVCMOS33"; ##Pin 2
+NET "gpio0_io<2>" LOC = "D17" 	| IOSTANDARD = "LVCMOS33"; ##Pin 3
+NET "gpio0_io<3>" LOC = "E17" 	| IOSTANDARD = "LVCMOS33"; ##Pin 4
+NET "gpio0_io<4>" LOC = "G13" 	| IOSTANDARD = "LVCMOS33"; ##Pin 7
+NET "gpio0_io<5>" LOC = "C17" 	| IOSTANDARD = "LVCMOS33"; ##Pin 8
+NET "gpio0_io<6>" LOC = "D18" 	| IOSTANDARD = "LVCMOS33"; ##Pin 9
+NET "gpio0_io<7>" LOC = "E18" 	| IOSTANDARD = "LVCMOS33"; ##Pin 10	
+

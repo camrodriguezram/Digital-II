@@ -1,0 +1,21 @@
+//! **************************************************************************
+// Written by: Map P.28xd on Wed Jul 02 17:00:26 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "rst" LOCATE = SITE "T10" LEVEL 1;
+COMP "lcddatos<0>" LOCATE = SITE "T12" LEVEL 1;
+COMP "lcddatos<1>" LOCATE = SITE "V12" LEVEL 1;
+COMP "lcddatos<2>" LOCATE = SITE "N10" LEVEL 1;
+COMP "lcddatos<3>" LOCATE = SITE "P11" LEVEL 1;
+COMP "lcdcontrol<0>" LOCATE = SITE "K2" LEVEL 1;
+COMP "lcdcontrol<1>" LOCATE = SITE "K1" LEVEL 1;
+COMP "lcdcontrol<2>" LOCATE = SITE "L4" LEVEL 1;
+COMP "lcdcontrol<3>" LOCATE = SITE "L3" LEVEL 1;
+COMP "blink<0>" LOCATE = SITE "K6" LEVEL 1;
+COMP "blink<1>" LOCATE = SITE "G3" LEVEL 1;
+COMP "pulsIN<0>" LOCATE = SITE "A8" LEVEL 1;
+COMP "pulsIN<1>" LOCATE = SITE "B8" LEVEL 1;
+SCHEMATIC END;
+

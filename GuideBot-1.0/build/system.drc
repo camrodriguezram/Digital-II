@@ -1,0 +1,18 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed Jun 10 12:33:54 2015
+
+drc -z system-routed.ncd
+
+ERROR:PhysDesignRules:368 - The signal <spi_mosi_OBUF> is incomplete. The signal
+   is not driven by any source pin in the design.
+WARNING:PhysDesignRules:367 - The signal <spi_miso_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+ERROR:PhysDesignRules:368 - The signal <spi_clk_OBUF> is incomplete. The signal
+   is not driven by any source pin in the design.
+ERROR:PhysDesignRules:10 - The network <spi_mosi_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <spi_clk_OBUF> is completely unrouted.
+ERROR:Bitgen:25 - DRC detected 4 errors and 1 warnings.  Please see the
+   previously displayed individual error or warning messages for more details.
+INFO:Bitgen:328 - DRC errors can be caused by a missing constraints file (.pcf).

@@ -1,0 +1,92 @@
+/*****************************************************************************
+ * Tipos de datos manejados por la UART
+
+typedef unsigned int  uint32_t;    //Entero sin signo de 32 Bit
+typedef signed   int   int32_t;    //Entero con signo de 32 Bit
+
+typedef unsigned char  uint8_t;    // Caracter sin signo de 8 Bit
+typedef signed   char   int8_t;    // Caracter con signo de 8 Bit
+
+/****************************************************************************
+
+*/
+
+
+#include  "soc-hw.h"
+#include  <string.h>
+#include <stdlib.h>
+
+
+
+int main(int argc, char **argv){ ////Main Fuction
+
+	uint8_t c;
+	//uint8_t o1;
+	//uint8_t o2;
+	
+	
+	
+	for(;;){
+	uart_putstr("Empezamos\r\n");
+	uart_putstr(" Ingresa w para adelante, s para parar, d para derecha, a para izquierda\r\n");
+	
+		c = uart_getchar();
+		uart_putstr("Letra Prueba: ");
+		uart_putchar(c);
+	        gpio0->w_dir = 0xff;
+		
+		switch (c) {
+		
+		
+		
+    		case 'w':  //Suma
+    			uart_putstr("Adelante\r\n");
+    			gpio_write(5); // (00000101, 00001111)
+    			uart_putstr("Escribí\r\n");
+    			
+    			uint8_t r1, r2;
+    			
+    			r1 = get_writtendata();
+    			uart_putstr(r1);
+    			
+    			r2 = get_writtendir();
+    			uart_putstr(r2);
+    			
+			break;
+			
+		case 's': // multi
+			uart_putstr("Parar\r\n");
+			gpio_write(0); // (00000000, 00001111)
+			uart_putstr("Escribí\r\n");
+			break;
+    			
+    		case 'd': // div
+			
+			uart_putstr("Derecha\r\n");
+			gpio_write( 1); // (00000001, 00001111)
+			uart_putstr("Escribí\r\n");
+			
+			break;  
+
+		case 'a': // resta
+			
+			uart_putstr("Izquierda\r\n");
+			gpio_write(4); // (00000100, 00001111)
+			uart_putstr("Escribí\r\n");
+			
+			break;  
+
+		default:
+			uart_putstr("Chao!! \r\n");
+			return 0;
+			break;
+		
+		
+		}
+		
+		
+	}
+	
+	return 0;
+}
+

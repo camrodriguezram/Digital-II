@@ -1,0 +1,8 @@
+Release 14.2 Drc P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Wed Jul  2 17:01:57 2014
+
+drc -z system-routed.ncd
+
+DRC detected 0 errors and 0 warnings.

@@ -1,0 +1,7 @@
+INFILE=/home/user/Desktop/SemestreVII/DEII/LM32COMPILER/lm32_soc/build/system-routed.ncd
+OUTFILE=/home/user/Desktop/SemestreVII/DEII/LM32COMPILER/lm32_soc/build/system.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=/home/user/Desktop/SemestreVII/DEII/LM32COMPILER/lm32_soc/build
+LICENSE=WebPack
+USER_INFO=210935223_0_0_268

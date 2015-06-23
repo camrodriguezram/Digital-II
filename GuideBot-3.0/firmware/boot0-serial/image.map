@@ -1,0 +1,147 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+bram             0x0000000000860000 0x0000000000001000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000000000                __DYNAMIC = 0x0
+                0x0000000000860000                _BRAM_START = 0x860000
+                0x0000000000001000                _BRAM_SIZE = 0x1000
+                0x0000000000861000                _BRAM_END = (_BRAM_START + _BRAM_SIZE)
+
+.text           0x0000000000860000      0x618
+                0x0000000000860000                _ftext = .
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000860000       0x8c crt0ram.o
+                0x0000000000860000                _start
+                0x0000000000860060                irq_enable
+                0x000000000086006c                irq_mask
+                0x0000000000860078                irq_disable
+                0x0000000000860084                jump
+                0x0000000000860088                halt
+ .text          0x000000000086008c      0x25c main.o
+                0x000000000086008c                main
+                0x0000000000860288                writeint
+ .text          0x00000000008602e8      0x330 soc-hw.o
+                0x00000000008602e8                sleep
+                0x0000000000860324                tic_init
+                0x0000000000860350                uart_init
+                0x0000000000860354                uart_getchar
+                0x0000000000860378                uart_putchar
+                0x000000000086039c                uart_putstr
+                0x00000000008603d0                uart_readString
+                0x0000000000860498                gpio_read
+                0x00000000008604b0                gpio_write
+                0x00000000008604c8                gpio_wdir
+                0x00000000008604e0                gpio_init
+                0x000000000086053c                spi_init
+                0x0000000000860598                spi_test
+                0x0000000000860600                spi_readStatus
+                0x0000000000860618                _etext = .
+
+.rodata         0x0000000000860618      0x1bc
+                0x0000000000860618                . = ALIGN (0x4)
+                0x0000000000860618                _frodata = .
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x0000000000860618       0xe3 main.o
+                                         0xe8 (size before relaxing)
+ *fill*         0x00000000008606fb        0x1 
+ .rodata        0x00000000008606fc       0x5c main.o
+ .rodata.cst4   0x0000000000860758        0x8 soc-hw.o
+                                          0xc (size before relaxing)
+ .rodata.str1.4
+                0x0000000000860760       0x74 soc-hw.o
+ *(.rodata1)
+                0x00000000008607d4                _erodata = .
+
+.data           0x00000000008607d4       0x10
+                0x00000000008607d4                . = ALIGN (0x4)
+                0x00000000008607d4                _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000000008607d4        0x0 crt0ram.o
+ .data          0x00000000008607d4        0x0 main.o
+ .data          0x00000000008607d4       0x10 soc-hw.o
+                0x00000000008607d4                uart0
+                0x00000000008607d8                timer0
+                0x00000000008607dc                gpio0
+                0x00000000008607e0                spi0
+ *(.data1)
+                0x00000000008607f0                _gp = ALIGN (0x10)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+                0x00000000008607e4                _edata = .
+
+.bss            0x00000000008607e4       0x28
+                0x00000000008607e4                . = ALIGN (0x4)
+                0x00000000008607e4                _fbss = .
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000008607e4        0x0 crt0ram.o
+ .bss           0x00000000008607e4        0x0 main.o
+ .bss           0x00000000008607e4       0x28 soc-hw.o
+                0x00000000008607e4                msec
+ *(COMMON)
+                0x000000000086080c                _ebss = .
+                0x000000000086080c                _end = .
+                0x0000000000860ffc                PROVIDE (_fstack, ((ORIGIN (bram) + 0x1000) - 0x4))
+LOAD crt0ram.o
+LOAD main.o
+LOAD soc-hw.o
+OUTPUT(image elf32-lm32)
+
+.debug_abbrev   0x0000000000000000      0x33b
+ .debug_abbrev  0x0000000000000000       0xf2 main.o
+ .debug_abbrev  0x00000000000000f2      0x249 soc-hw.o
+
+.debug_info     0x0000000000000000      0x679
+ .debug_info    0x0000000000000000      0x1a0 main.o
+ .debug_info    0x00000000000001a0      0x4d9 soc-hw.o
+
+.debug_line     0x0000000000000000      0x598
+ .debug_line    0x0000000000000000      0x1f8 main.o
+ .debug_line    0x00000000000001f8      0x3a0 soc-hw.o
+
+.debug_frame    0x0000000000000000      0x120
+ .debug_frame   0x0000000000000000       0x30 main.o
+ .debug_frame   0x0000000000000030       0xf0 soc-hw.o
+
+.debug_loc      0x0000000000000000      0x192
+ .debug_loc     0x0000000000000000      0x101 main.o
+ .debug_loc     0x0000000000000101       0x91 soc-hw.o
+
+.debug_pubnames
+                0x0000000000000000      0x13c
+ .debug_pubnames
+                0x0000000000000000       0x28 main.o
+ .debug_pubnames
+                0x0000000000000028      0x114 soc-hw.o
+
+.debug_pubtypes
+                0x0000000000000000       0x8e
+ .debug_pubtypes
+                0x0000000000000000       0x2b main.o
+ .debug_pubtypes
+                0x000000000000002b       0x63 soc-hw.o
+
+.debug_aranges  0x0000000000000000       0x40
+ .debug_aranges
+                0x0000000000000000       0x20 main.o
+ .debug_aranges
+                0x0000000000000020       0x20 soc-hw.o
+
+.debug_str      0x0000000000000000      0x248
+ .debug_str     0x0000000000000000       0xfc main.o
+                                        0x135 (size before relaxing)
+ .debug_str     0x00000000000000fc      0x14c soc-hw.o
+                                        0x20c (size before relaxing)
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 main.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 soc-hw.o
