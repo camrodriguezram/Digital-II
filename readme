@@ -1,0 +1,35 @@
+Resumen del proyecto:
+
+Este  Robot  busca  ser  una  alternativa  de reemplazo  para  los  perros  lazarillos,  por  lo  que  su 
+
+funcionamiento está encaminado a buscar los obstáculos en la trayectoria del robot de tal forma 
+
+que anticipe los obstáculos para el usuario invidente y se los transmita mediante una señal de 
+
+audio,  también  el  robot  estará  en  capacidad  de  guiar  al  usuario  en  una  trayectoria  recta 
+
+definida.
+
+3. Especificaciones del proyecto 
+
+● El robot será capaz de reconocer obstáculos:
+
+Para el reconocimiento de obstaculos se usara una cámara que tomará fotos cada determinado 
+
+tiempo, esta información será usada para la detección de obstáculos.
+
+● Tendrá la función de esquivar los obstáculos hallados e informar a la persona invidente 
+
+de forma inalámbrica:
+
+Como se dijo anteriormente el robot tendrá sensores y una cámara que serán el medio por el 
+
+que se detectara los obstáculos,  la cámara tendrá la prioridad puesto que si esta reconoce que 
+
+es una persona el obstáculo el robot continuará, de esta forma se tendrá la información hacia 
+
+que direccion se esta moviendo el robot, esta información se enviará por bluetooth  a un control 
+
+que tendrá el invidente, la señal que recibirá finalmente la persona será una señal de audio que 
+
+le indicara la direccion de hacia donde moverse.
